@@ -1,0 +1,58 @@
+# RTL build and sim artifacts
+*.vcd
+*.vvp
+*.out
+*.log
+*.lxt
+*.fst
+*.wlf
+*.dump
+*.hex
+*.bin
+*.mem
+*.elf
+
+# Simulation tools
+*.vpd
+*.saif
+*.ucdb
+*.asdb
+*.sdf
+*.fsdb
+*.key
+*.svf
+*.srec
+*.xpr
+
+# Quartus/ModelSim/Xilinx files
+__pycache__/
+transcript
+vsim.wlf
+work/
+simv*
+*.jou
+*.pb
+*.srp
+*.tcl
+*.xpr
+*.runs/
+*.cache/
+*.webtalk/
+*.hw/
+
+# Cocotb/Python build files
+*.pyc
+__pycache__/
+build/
+dist/
+*.egg-info/
+
+# Logs or scratch
+*.log
+*.tmp
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+.DS_Store
