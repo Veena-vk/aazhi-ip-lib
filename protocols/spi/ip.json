@@ -1,0 +1,65 @@
+{
+  "id": "spi_master",
+  "name": "SPI Master Controller",
+  "version": "1.0.0",
+  "category": "protocols",
+  "subcategory": "serial",
+  "description": "SPI master supporting all four SPI modes (CPOL/CPHA 0-3). Parametric word width and clock divider. Assert din_valid to start a transfer; done pulses when complete.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/protocols/spi",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/spi_master.v"
+  ],
+  "top_modules": [
+    "spi_master"
+  ],
+  "parameters": [
+    {
+      "name": "DATA_WIDTH",
+      "default": 8,
+      "description": "SPI word width"
+    },
+    {
+      "name": "CLK_DIV",
+      "default": 4,
+      "description": "sclk = clk / (2 * CLK_DIV)"
+    },
+    {
+      "name": "CPOL",
+      "default": 0,
+      "description": "Clock polarity (0 or 1)"
+    },
+    {
+      "name": "CPHA",
+      "default": 0,
+      "description": "Clock phase (0 or 1)"
+    }
+  ],
+  "ports_summary": {
+    "spi_master": [
+      "clk",
+      "rst",
+      "din[DATA_WIDTH-1:0]",
+      "din_valid",
+      "dout[DATA_WIDTH-1:0]",
+      "done",
+      "busy",
+      "sclk",
+      "mosi",
+      "miso",
+      "cs_n"
+    ]
+  },
+  "usage_note": "Assert din_valid for one cycle to start a transfer. Monitor done (1-cycle pulse) for completion. dout holds received data when done is high.",
+  "tags": [
+    "spi",
+    "serial",
+    "communication",
+    "master"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

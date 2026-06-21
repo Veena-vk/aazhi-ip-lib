@@ -1,0 +1,247 @@
+{
+  "version": "1.0.0",
+  "description": "Aazhi IP Library \u2014 curated open-source RTL IP cores for FPGA and ASIC design",
+  "repository": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "last_updated": "2026-06-21",
+  "categories": [
+    {
+      "id": "protocols",
+      "label": "Communication Protocols",
+      "icon": "\ud83d\udd0c"
+    },
+    {
+      "id": "memory",
+      "label": "Memory & Buffers",
+      "icon": "\ud83d\udcbe"
+    },
+    {
+      "id": "image_video",
+      "label": "Image & Video",
+      "icon": "\ud83c\udfa5"
+    },
+    {
+      "id": "dsp",
+      "label": "DSP & Math",
+      "icon": "\ud83d\udcd0"
+    },
+    {
+      "id": "clocking",
+      "label": "Clocking",
+      "icon": "\u23f0"
+    },
+    {
+      "id": "misc",
+      "label": "Utility / Misc",
+      "icon": "\ud83d\udd27"
+    }
+  ],
+  "ips": [
+    {
+      "id": "uart",
+      "name": "UART (Universal Asynchronous Receiver/Transmitter)",
+      "category": "protocols",
+      "subcategory": "serial",
+      "description": "AXI4-Stream UART transmitter and receiver. Configurable baud rate via prescaler, configurable data width. Supports overrun and frame error detection on RX.",
+      "author": "Alex Forencich",
+      "license": "MIT",
+      "tags": [
+        "uart",
+        "serial",
+        "communication",
+        "axi-stream",
+        "async"
+      ],
+      "path": "protocols/uart",
+      "top_modules": [
+        "uart_tx",
+        "uart_rx"
+      ],
+      "verified": true
+    },
+    {
+      "id": "spi_master",
+      "name": "SPI Master Controller",
+      "category": "protocols",
+      "subcategory": "serial",
+      "description": "SPI master supporting all four SPI modes (CPOL/CPHA 0-3). Parametric word width and clock divider. Assert din_valid to start a transfer; done pulses when complete.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "spi",
+        "serial",
+        "communication",
+        "master"
+      ],
+      "path": "protocols/spi",
+      "top_modules": [
+        "spi_master"
+      ],
+      "verified": false
+    },
+    {
+      "id": "i2c_master",
+      "name": "I2C Master Controller",
+      "category": "protocols",
+      "subcategory": "serial",
+      "description": "Full-featured I2C master with AXI4-Stream command and data interface. Supports repeated starts, multi-byte transfers, clock stretching, and missed-ACK detection.",
+      "author": "Alex Forencich",
+      "license": "MIT",
+      "tags": [
+        "i2c",
+        "serial",
+        "communication",
+        "master",
+        "axi-stream"
+      ],
+      "path": "protocols/i2c",
+      "top_modules": [
+        "i2c_master"
+      ],
+      "verified": true
+    },
+    {
+      "id": "sync_fifo",
+      "name": "Synchronous FIFO",
+      "category": "memory",
+      "subcategory": "fifo",
+      "description": "Single-clock-domain FIFO with parameterized width and depth. Uses dual-pointer Gray-free binary scheme. Provides full, empty, and count outputs.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "fifo",
+        "memory",
+        "buffer",
+        "synchronous"
+      ],
+      "path": "memory/sync_fifo",
+      "top_modules": [
+        "sync_fifo"
+      ],
+      "verified": false
+    },
+    {
+      "id": "async_fifo",
+      "name": "Asynchronous FIFO (Dual-Clock)",
+      "category": "memory",
+      "subcategory": "fifo",
+      "description": "Dual-clock-domain FIFO for safe clock-domain crossing. Uses Gray-code pointers and 2-flip-flop synchronizers to safely cross the pointer between domains.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "fifo",
+        "memory",
+        "cdc",
+        "clock-domain-crossing",
+        "async"
+      ],
+      "path": "memory/async_fifo",
+      "top_modules": [
+        "async_fifo"
+      ],
+      "verified": false
+    },
+    {
+      "id": "vga_controller",
+      "name": "VGA Controller (640\u00d7480 @ 60 Hz)",
+      "category": "image_video",
+      "subcategory": "display",
+      "description": "Standard 640\u00d7480 @ 60 Hz VGA sync generator. Outputs hsync, vsync, horizontal/vertical pixel counters, and display_on flag. Connect pixel RGB data when display_on is high.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "vga",
+        "video",
+        "display",
+        "sync",
+        "640x480"
+      ],
+      "path": "image_video/vga_controller",
+      "top_modules": [
+        "vga_controller"
+      ],
+      "verified": false
+    },
+    {
+      "id": "pwm",
+      "name": "PWM Generator",
+      "category": "misc",
+      "subcategory": "control",
+      "description": "Simple pulse-width modulator. Counter-compare approach with parameterizable resolution. Useful for motor control, LED dimming, and DAC approximation.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "pwm",
+        "motor",
+        "led",
+        "control",
+        "dac"
+      ],
+      "path": "misc/pwm",
+      "top_modules": [
+        "pwm"
+      ],
+      "verified": false
+    },
+    {
+      "id": "debounce",
+      "name": "Button Debouncer",
+      "category": "misc",
+      "subcategory": "utility",
+      "description": "Debounces mechanical buttons or any noisy digital signal. Input must remain stable for STABLE_COUNT clock cycles before the output is updated. Essential for any design with physical buttons.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "debounce",
+        "button",
+        "input",
+        "utility"
+      ],
+      "path": "misc/debounce",
+      "top_modules": [
+        "debounce"
+      ],
+      "verified": false
+    },
+    {
+      "id": "lfsr",
+      "name": "LFSR Pseudo-Random Number Generator",
+      "category": "misc",
+      "subcategory": "math",
+      "description": "Maximal-length Galois LFSR for pseudo-random bit and word generation. Supports widths 8, 16, and 32 with built-in optimal taps. Period = 2^WIDTH - 1.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "lfsr",
+        "prng",
+        "random",
+        "test",
+        "stimulus"
+      ],
+      "path": "misc/lfsr",
+      "top_modules": [
+        "lfsr"
+      ],
+      "verified": false
+    },
+    {
+      "id": "clock_divider",
+      "name": "Integer Clock Divider",
+      "category": "clocking",
+      "subcategory": "clock_management",
+      "description": "Divides an input clock by any even integer \u2265 2. Output maintains 50% duty cycle. Useful when a PLL/MMCM is unavailable or overkill for simple frequency division.",
+      "author": "aazhi-ip-lib contributors",
+      "license": "MIT",
+      "tags": [
+        "clock",
+        "divider",
+        "frequency",
+        "clocking"
+      ],
+      "path": "clocking/clock_divider",
+      "top_modules": [
+        "clock_divider"
+      ],
+      "verified": false
+    }
+  ]
+}

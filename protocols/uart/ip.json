@@ -1,0 +1,66 @@
+{
+  "id": "uart",
+  "name": "UART (Universal Asynchronous Receiver/Transmitter)",
+  "version": "1.0.0",
+  "category": "protocols",
+  "subcategory": "serial",
+  "description": "AXI4-Stream UART transmitter and receiver. Configurable baud rate via prescaler, configurable data width. Supports overrun and frame error detection on RX.",
+  "author": "Alex Forencich",
+  "author_url": "https://github.com/alexforencich",
+  "source_url": "https://github.com/alexforencich/verilog-uart",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/uart_tx.v",
+    "rtl/uart_rx.v"
+  ],
+  "top_modules": [
+    "uart_tx",
+    "uart_rx"
+  ],
+  "parameters": [
+    {
+      "name": "DATA_WIDTH",
+      "default": 8,
+      "description": "Data bus width in bits"
+    }
+  ],
+  "ports_summary": {
+    "uart_tx": [
+      "clk",
+      "rst",
+      "s_axis_tdata",
+      "s_axis_tvalid",
+      "s_axis_tready",
+      "txd",
+      "busy",
+      "prescale[15:0]"
+    ],
+    "uart_rx": [
+      "clk",
+      "rst",
+      "m_axis_tdata",
+      "m_axis_tvalid",
+      "m_axis_tready",
+      "rxd",
+      "busy",
+      "overrun_error",
+      "frame_error",
+      "prescale[15:0]"
+    ]
+  },
+  "usage_note": "Set prescale = clk_freq / baud_rate. E.g. 50 MHz clk, 115200 baud \u2192 prescale = 434.",
+  "tags": [
+    "uart",
+    "serial",
+    "communication",
+    "axi-stream",
+    "async"
+  ],
+  "verified": true,
+  "verified_tools": [
+    "Verilator",
+    "Icarus Verilog"
+  ],
+  "added_date": "2026-06-21"
+}

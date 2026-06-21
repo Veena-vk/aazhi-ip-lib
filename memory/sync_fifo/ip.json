@@ -1,0 +1,53 @@
+{
+  "id": "sync_fifo",
+  "name": "Synchronous FIFO",
+  "version": "1.0.0",
+  "category": "memory",
+  "subcategory": "fifo",
+  "description": "Single-clock-domain FIFO with parameterized width and depth. Uses dual-pointer Gray-free binary scheme. Provides full, empty, and count outputs.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/memory/sync_fifo",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/sync_fifo.v"
+  ],
+  "top_modules": [
+    "sync_fifo"
+  ],
+  "parameters": [
+    {
+      "name": "DATA_WIDTH",
+      "default": 8,
+      "description": "Word width in bits"
+    },
+    {
+      "name": "DEPTH",
+      "default": 16,
+      "description": "FIFO depth (must be power of 2)"
+    }
+  ],
+  "ports_summary": {
+    "sync_fifo": [
+      "clk",
+      "rst",
+      "wr_en",
+      "din[DATA_WIDTH-1:0]",
+      "full",
+      "rd_en",
+      "dout[DATA_WIDTH-1:0]",
+      "empty",
+      "count[$clog2(DEPTH):0]"
+    ]
+  },
+  "usage_note": "DEPTH must be a power of 2. Simultaneous read/write in same cycle is supported (will not lose data if not full/empty).",
+  "tags": [
+    "fifo",
+    "memory",
+    "buffer",
+    "synchronous"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

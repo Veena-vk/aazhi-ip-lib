@@ -1,0 +1,55 @@
+{
+  "id": "async_fifo",
+  "name": "Asynchronous FIFO (Dual-Clock)",
+  "version": "1.0.0",
+  "category": "memory",
+  "subcategory": "fifo",
+  "description": "Dual-clock-domain FIFO for safe clock-domain crossing. Uses Gray-code pointers and 2-flip-flop synchronizers to safely cross the pointer between domains.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/memory/async_fifo",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/async_fifo.v"
+  ],
+  "top_modules": [
+    "async_fifo"
+  ],
+  "parameters": [
+    {
+      "name": "DATA_WIDTH",
+      "default": 8,
+      "description": "Word width in bits"
+    },
+    {
+      "name": "DEPTH",
+      "default": 16,
+      "description": "FIFO depth (must be power of 2)"
+    }
+  ],
+  "ports_summary": {
+    "async_fifo": [
+      "wr_clk",
+      "wr_rst",
+      "wr_en",
+      "din",
+      "full",
+      "rd_clk",
+      "rd_rst",
+      "rd_en",
+      "dout",
+      "empty"
+    ]
+  },
+  "usage_note": "DEPTH must be power of 2. Gray-code pointer sync adds 2-cycle latency on flag updates. Do not use binary pointers across clock domains.",
+  "tags": [
+    "fifo",
+    "memory",
+    "cdc",
+    "clock-domain-crossing",
+    "async"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

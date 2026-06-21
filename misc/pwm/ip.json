@@ -1,0 +1,44 @@
+{
+  "id": "pwm",
+  "name": "PWM Generator",
+  "version": "1.0.0",
+  "category": "misc",
+  "subcategory": "control",
+  "description": "Simple pulse-width modulator. Counter-compare approach with parameterizable resolution. Useful for motor control, LED dimming, and DAC approximation.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/misc/pwm",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/pwm.v"
+  ],
+  "top_modules": [
+    "pwm"
+  ],
+  "parameters": [
+    {
+      "name": "WIDTH",
+      "default": 8,
+      "description": "Counter width \u2014 2^WIDTH steps of resolution"
+    }
+  ],
+  "ports_summary": {
+    "pwm": [
+      "clk",
+      "rst",
+      "duty[WIDTH-1:0]",
+      "pwm_out"
+    ]
+  },
+  "usage_note": "PWM frequency = clk_freq / 2^WIDTH. For 50 MHz clk and WIDTH=8: ~195 kHz PWM. duty=0 \u2192 always low, duty=255 \u2192 almost always high.",
+  "tags": [
+    "pwm",
+    "motor",
+    "led",
+    "control",
+    "dac"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

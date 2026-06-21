@@ -1,0 +1,43 @@
+{
+  "id": "debounce",
+  "name": "Button Debouncer",
+  "version": "1.0.0",
+  "category": "misc",
+  "subcategory": "utility",
+  "description": "Debounces mechanical buttons or any noisy digital signal. Input must remain stable for STABLE_COUNT clock cycles before the output is updated. Essential for any design with physical buttons.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/misc/debounce",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/debounce.v"
+  ],
+  "top_modules": [
+    "debounce"
+  ],
+  "parameters": [
+    {
+      "name": "STABLE_COUNT",
+      "default": 1000,
+      "description": "Stable cycles required before output updates"
+    }
+  ],
+  "ports_summary": {
+    "debounce": [
+      "clk",
+      "rst",
+      "noisy_in",
+      "clean_out"
+    ]
+  },
+  "usage_note": "For 50 MHz clk and 20 ms debounce time: STABLE_COUNT = 1_000_000. Adjust for your clock frequency and acceptable debounce window.",
+  "tags": [
+    "debounce",
+    "button",
+    "input",
+    "utility"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

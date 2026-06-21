@@ -1,0 +1,43 @@
+{
+  "id": "vga_controller",
+  "name": "VGA Controller (640\u00d7480 @ 60 Hz)",
+  "version": "1.0.0",
+  "category": "image_video",
+  "subcategory": "display",
+  "description": "Standard 640\u00d7480 @ 60 Hz VGA sync generator. Outputs hsync, vsync, horizontal/vertical pixel counters, and display_on flag. Connect pixel RGB data when display_on is high.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/image_video/vga_controller",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/vga_controller.v"
+  ],
+  "top_modules": [
+    "vga_controller"
+  ],
+  "parameters": [],
+  "ports_summary": {
+    "vga_controller": [
+      "clk_25mhz",
+      "rst",
+      "hsync",
+      "vsync",
+      "h_active",
+      "v_active",
+      "display_on",
+      "h_count[9:0]",
+      "v_count[9:0]"
+    ]
+  },
+  "usage_note": "Requires exactly 25.175 MHz pixel clock. On most FPGAs use a PLL/MMCM to derive this from your system clock. Drive RGB outputs to 0 when display_on=0.",
+  "tags": [
+    "vga",
+    "video",
+    "display",
+    "sync",
+    "640x480"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

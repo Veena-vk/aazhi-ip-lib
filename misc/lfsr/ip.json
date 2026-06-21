@@ -1,0 +1,50 @@
+{
+  "id": "lfsr",
+  "name": "LFSR Pseudo-Random Number Generator",
+  "version": "1.0.0",
+  "category": "misc",
+  "subcategory": "math",
+  "description": "Maximal-length Galois LFSR for pseudo-random bit and word generation. Supports widths 8, 16, and 32 with built-in optimal taps. Period = 2^WIDTH - 1.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/misc/lfsr",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/lfsr.v"
+  ],
+  "top_modules": [
+    "lfsr"
+  ],
+  "parameters": [
+    {
+      "name": "WIDTH",
+      "default": 16,
+      "description": "LFSR width (8, 16, or 32)"
+    },
+    {
+      "name": "SEED",
+      "default": 1,
+      "description": "Initial state (must be non-zero)"
+    }
+  ],
+  "ports_summary": {
+    "lfsr": [
+      "clk",
+      "rst",
+      "en",
+      "rnd_out[WIDTH-1:0]",
+      "bit_out"
+    ]
+  },
+  "usage_note": "SEED must be non-zero (all-zeros is a lock-up state). For widths other than 8/16/32, provide custom taps via the taps function. Assert en each cycle to advance the sequence.",
+  "tags": [
+    "lfsr",
+    "prng",
+    "random",
+    "test",
+    "stimulus"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}

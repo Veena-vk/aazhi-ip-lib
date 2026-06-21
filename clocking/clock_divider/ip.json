@@ -1,0 +1,42 @@
+{
+  "id": "clock_divider",
+  "name": "Integer Clock Divider",
+  "version": "1.0.0",
+  "category": "clocking",
+  "subcategory": "clock_management",
+  "description": "Divides an input clock by any even integer \u2265 2. Output maintains 50% duty cycle. Useful when a PLL/MMCM is unavailable or overkill for simple frequency division.",
+  "author": "aazhi-ip-lib contributors",
+  "author_url": "https://github.com/Veena-vk/aazhi-ip-lib",
+  "source_url": "https://github.com/Veena-vk/aazhi-ip-lib/tree/main/clocking/clock_divider",
+  "license": "MIT",
+  "language": "Verilog 2001",
+  "rtl_files": [
+    "rtl/clock_divider.v"
+  ],
+  "top_modules": [
+    "clock_divider"
+  ],
+  "parameters": [
+    {
+      "name": "DIVISOR",
+      "default": 4,
+      "description": "Division ratio (even integer \u2265 2)"
+    }
+  ],
+  "ports_summary": {
+    "clock_divider": [
+      "clk_in",
+      "rst",
+      "clk_out"
+    ]
+  },
+  "usage_note": "DIVISOR must be even for 50% duty cycle. For synthesis, prefer FPGA-native PLL/MMCM primitives for performance-critical clocks. This is suitable for slow auxiliary clocks.",
+  "tags": [
+    "clock",
+    "divider",
+    "frequency",
+    "clocking"
+  ],
+  "verified": false,
+  "added_date": "2026-06-21"
+}
